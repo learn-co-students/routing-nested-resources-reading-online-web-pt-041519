@@ -40,9 +40,16 @@ post3 = <<-POST3
   But something wasn't right. I stumbled upon a giant banana.
   POST3
 
+post4 = <<-POST4
+  Do you know who's awesome? A late-twenties woman name Pamela. Yes, she is indeed AWESOME
+  and quite mysterious. She turning 30 but looks like a child. She'll be a greate spy.
+  Be joyous of your youthful appearance love. Some will envy it as you despise it...
+  POST4
+
 Post.create(title: "Something about Democrats", description: post1, author: author1)
 Post.create(title: "SPAM SPAM SPAM", description: post2, author: author2)
-post = Post.create(title: "Links! Click Links!", description: post3, author: author3)
+Post.create(title: "Links! Click Links!", description: post3, author: author3)
+post = Post.create(title: "Pamela Alvarez is AWESOME", description: post4, author: author1)
 
 #set one to yesterday
 post.update_attribute(:created_at, Time.zone.today.advance(days: -1))

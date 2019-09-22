@@ -3,6 +3,12 @@ class PostsController < ApplicationController
   def index
     if params[:author_id]
       @posts = Author.find(params[:author_id]).posts
+      #Where is params[:author_id] coming from?
+      #Rails provides it for us through the nested route
+      
+      #Rails takes the parent resource's name and
+      #appends _id to it for a nice, predictable way
+      #to find the parent resource's ID.
     else
       @posts = Post.all
     end
